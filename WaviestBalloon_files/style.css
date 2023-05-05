@@ -1,0 +1,225 @@
+@font-face {
+	font-family: gotham;
+	src: url(./SF-Pro-Display-Bold.otf);
+}
+
+@font-face {
+	font-family: gothambold;
+	src: url(./SF-Pro-Display-Bold.otf);
+}
+
+body {
+	background: #070707;
+	/* Text prop */
+	font-family: gotham;
+	color: white;
+}
+
+.centered {
+	/* Centering */
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.screenwhole {
+	position: sticky;
+	width: 100vh;
+	height: 100vh;
+}
+
+/* some are marked as !important since firefox devtools believes thats a good idea */
+.left {
+	position: fixed;
+	padding-left: 0.65%;
+	padding-top: 0.65%;
+
+	top: 0px !important;
+	left: 0px !important;
+}
+
+.right {
+	position: fixed;
+	right: 0.65%;
+	padding-left: 0.65%;
+	padding-top: 0.65%;
+	transform: rotate(90deg);
+
+	top: 0px !important;
+	right: 0px !important;
+}
+
+.bottomleft {
+	position: fixed;
+	padding-left: 0.65%;
+	padding-top: 0.65%;
+	transform: rotate(270deg);
+
+	left: 0px !important;
+	bottom: 0px !important;
+}
+
+.bottomright {
+	position: fixed;
+	bottom: 0.65%;
+	padding-left: 0.65%;
+	padding-top: 0.65%;
+	transform: rotate(180deg);
+
+	right: 0px !important;
+	bottom: 0px !important;
+}
+
+.bottomlefttext {
+	position: fixed;
+	margin-bottom: 0px;
+	bottom: 1%;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+
+/* can be used for later, bottom right/left i guess uwu
+.right {
+	position: absolute;
+	right: 100%;
+	padding-left: 99.35%;
+	padding-top: 99.35%;
+}
+*/
+
+/* ---------------------------------------------- */
+
+@keyframes amovement {
+	0% { text-shadow: 2px 2px #cc33cc; }
+	25% { text-shadow: 2px -2px #cc33cc; }
+	50% { text-shadow: -2px -2px #cc33cc; }
+	75% { text-shadow: -2px 2px #cc33cc; }
+	100% { text-shadow: 2px 2px #cc33cc; }
+}
+
+@keyframes underlinemovement {
+	0% { filter: drop-shadow(2px 2px 0px #cc33cc); }
+	25% { filter: drop-shadow(2px -2px 0px #cc33cc); }
+	50% { filter: drop-shadow(-2px -2px 0px #cc33cc); }
+	75% { filter: drop-shadow(-2px 2px 0px #cc33cc); }
+	100% { filter: drop-shadow(2px 2px 0px #cc33cc); }
+}
+
+@keyframes gamspinner {
+	0% { transform: rotate(0deg) scale(1, 1); }
+	100% { transform: rotate(90deg) scale(1, 1); }
+}
+@keyframes spinnerout {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(3600deg) scale(0.5, 0.5); opacity: 0; }
+}
+
+h1 {
+	font-size: 2.5vmin;
+	/*background: -webkit-linear-gradient(50deg, #cc33cc, #30d4f3);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;*/
+}
+
+@media (max-width : 320px) {
+	h1 {
+		font-size: 3.5vmin;
+	}
+}
+
+.grad {
+	font-size: 2.5vmin;
+	background: -webkit-linear-gradient(50deg, #cc33cc, #30d4f3);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+b {
+	font-family: gothambold;
+	color: white;
+}
+
+a {
+	color: #cf5fcf;
+	text-shadow: 0px 0px #cc33cc;
+	animation-fill-mode: both;
+	animation-duration: 2.65s;
+	animation-iteration-count: infinite;
+}
+
+hr {
+	color: white;
+}
+
+.underline {
+	padding-bottom: 4px;
+	position: relative;
+	text-decoration: none;
+}
+.underline::after {
+	/*background: linear-gradient(75deg, #7c85e0, #c738cd);*/
+	background: #cf5fcf;
+	content: "";
+	position: absolute;
+	border-radius: 12.5px;
+	opacity: 75;
+	bottom: 0;
+	left: 0;
+	height: 2.85px;
+	width: 100%;
+}
+.underline:hover {
+	animation-name: underlinemovement;
+	animation-timing-function: ease;
+}
+a:hover {
+	animation-name: amovement;
+	animation-timing-function: ease;
+}
+
+.warningside {
+	background-image: url('https://fur.dev/assets/dotborderlower.png');
+	background-size: 25px 10px;
+	background-position: 0% 0%;
+	background-repeat: repeat-y;
+	background-color: #131313;
+
+	border-radius: 10px 10px 10px 10px;
+	padding: 1.5%;
+
+	width: auto;
+	height: max-content;
+}
+
+.spinner {
+	animation: gamspinner 0.65s ease-in-out infinite;
+}
+
+.sidetext {
+	padding-right: 0px;
+	padding-top: 9.5px;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-left: 25px;
+	writing-mode: vertical-rl;
+	text-align: right;
+}
+
+#loader {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	margin: 0% 0% 0% 0%;
+	bottom: 0px;
+	right: 0px;
+
+	background-image: url('https://fur.dev/assets/dotborder.png');
+	background-size: 25px 10px;
+	background-position: 0% 0%;
+	background-repeat: repeat-y;
+	background-color: #131313;
+
+	z-index: 100;
+}
