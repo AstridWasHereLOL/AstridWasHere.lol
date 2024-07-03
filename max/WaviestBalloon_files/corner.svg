@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="4000" height="4000" viewBox="0 0 4000 4000">
+	<defs>
+		<style>
+			.cls-1 {
+				fill: #fff;
+			}
+		</style>
+	</defs>
+	<rect class="cls-1" width="4000" height="544" rx="7" ry="7"/>
+	<rect class="cls-1" width="544" height="4000" rx="7" ry="7"/>
+</svg>
